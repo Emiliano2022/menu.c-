@@ -1,0 +1,120 @@
+#include <iostream>
+#include <locale.h>
+#include <stdio.h>
+#include <windows.h>
+#include <conio.h>
+#include<stdlib.h>
+
+
+void gotoxy(int x, int y)
+{
+   SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE),(COORD){x-1,y-1});
+} 
+
+main(void) 
+
+{
+	char nome,cidade,comp,estado;
+	int opcao,linha,coluna,numero,cep,idade;
+	
+	
+	setlocale(LC_ALL,"portuguese");
+	linha = 1;
+	coluna = 1;
+	do
+	{
+	
+		gotoxy(1,1);
+		//printf("teste de posicionamento");
+		printf("====================== Menu ======================== ");	
+		gotoxy(1,2);
+		printf("1 - Cadastrar: ");	
+		gotoxy(1,3);
+		printf("2 - Pesquisar: ");	
+		gotoxy(1,4);
+		printf("3 - Alterar: ");
+		gotoxy(1,5);
+		printf("4 - Sair: ");
+		gotoxy(1,6);;
+		printf("====================================================");
+		gotoxy(1,7);
+		printf("Escolha a opção desejada: ");
+		scanf("%d",&opcao);
+		system("cls");
+		if (opcao == 1)	
+		{
+			gotoxy(1,1);
+			printf("nome:");
+			scanf("%s",&nome);
+			gotoxy(1,3);
+			printf("idade:");
+			scanf("%d",&idade);
+			gotoxy(1,5);
+			printf("cidade:");
+			scanf("%s",&cidade);
+			gotoxy(1,7);
+			printf("estado:");
+			scanf("%s",&estado);
+			gotoxy(1,9);
+			printf("numero:");
+			scanf("%d",&numero);
+			gotoxy(1,11);
+			printf("comp:");
+			scanf("%s",&comp);
+			gotoxy(1,13);
+			printf("cep:");
+			scanf("%d",&cep);
+			system("cls");
+		}
+		else
+		{
+			if (opcao == 2)	
+			{
+				gotoxy(1,1);
+				printf("nome %s",&nome);
+				gotoxy(1,2);
+				printf("idade %d",&idade);
+				gotoxy(1,3);
+				printf("cidade %s",&cidade);
+				gotoxy(1,4);
+				printf("estado %s",&estado);
+				gotoxy(1,5);
+				printf("numero %d",&numero);
+				gotoxy(1,6);
+				printf("comp %s",&comp);
+				gotoxy(1,7);
+				printf("cep %d",&cep);
+				gotoxy(1,10);
+				system("pause");
+				system("cls");
+			}
+			else
+			{
+				if (opcao == 3)	
+				{
+					gotoxy(30,15);
+					printf("Você escolheu alterar opção 3 ");
+				}
+				else
+				{
+					if (opcao == 4)
+					{
+						gotoxy(30,15);
+						printf("Desenvolvido por alunos da UBC");
+					}
+					else
+					{
+						gotoxy(30,15);
+						printf("Opção inválida");
+					}
+						
+				}	
+			}	
+				
+		}
+	gotoxy(30,16);
+	system("pause");
+	system("cls");
+	}
+	while (opcao != 4);
+}
